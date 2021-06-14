@@ -1,6 +1,7 @@
 $purple: #511370;
-$bg: #f0f0f0;
-$link: #5e5e5e;
+$bg: #e0e0e0;
+$link: #4e4e4e;
+$hover: #eaeaea;
 
 body {
   width: 100vw;
@@ -53,41 +54,61 @@ body {
       justify-content: center;
       width: 90%;
       padding: 0 5%;
-      .link {
+      .link-container {
+        position: relative;
         animation-name: fadeInUp;
         animation-duration: 0.5s;
         animation-fill-mode: both;
         animation-delay: 1s;
-        color: $purple;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        opacity: 0;
         margin: 8px;
         width: 64px;
         height: 64px;
-        border-radius: 20%;
-        text-decoration: none;
-        border: 2px solid $purple;
-        box-shadow: 0 0 2px $purple;
-        $n: 10;
+        opacity: 0;
+        $n: 8;
         @for $x from 2 through $n {
           &:nth-child(#{$x}) {
             animation-delay: 1s + (100ms * ($x - 1));
           }
         }
-        i {
-          width: 46px;
-          height: 46px;
-          font-size: 46px;
+        &:hover {
+          .link {
+            background-color: $hover;
+            transition: 250ms background-color, 250ms box-shadow,
+              250ms max-height;
+            box-shadow: 2px 2px 4px $purple;
+          }
+        }
+        .link {
+          z-index: 2;
+          position: absolute;
+          bottom: 0;
+          max-height: 100%;
+          height: 100%;
+          width: 100%;
+          color: $purple;
           display: flex;
           align-items: center;
           justify-content: center;
+          border-radius: 20%;
+          text-decoration: none;
+          border: 2px solid $purple;
+          box-shadow: 0 0 2px $purple;
+          i {
+            width: 46px;
+            height: 46px;
+            font-size: 46px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
         }
-        &:hover {
-          background-color: white;
-          transition-duration: 250ms;
-          box-shadow: 2px 2px 4px $purple;
+        .title {
+          z-index: 1;
+          position: absolute;
+          width: 100%;
+          text-align: center;
+          top: 0;
+          height: 20%;
         }
       }
     }
@@ -104,6 +125,7 @@ body {
     opacity: 1;
   }
 }
+
 @media (min-width: 0px) {
   body {
     .container {
@@ -194,23 +216,24 @@ body {
       }
       .links {
         width: 600px;
-        .link {
+        .link-container {
           margin: 12px;
           width: 97px;
           height: 97px;
-          i {
-            width: 64px;
-            height: 64px;
-            font-size: 64px;
+          .link {
+            i {
+              width: 64px;
+              height: 64px;
+              font-size: 64px;
+            }
+          }
+          &:hover {
+            .link {
+              max-height: 80px;
+            }
           }
         }
       }
     }
   }
-}
-
-@media (min-width: 1024px) {
-}
-
-@media (min-width: 1200px) {
 }
