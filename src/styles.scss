@@ -1,4 +1,15 @@
+$purple: #511370;
+$bg: #f0f0f0;
+$link: #5e5e5e;
+
 body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bg;
+  margin: 0;
   .container {
     display: flex;
     align-items: center;
@@ -8,7 +19,7 @@ body {
       display: flex;
       justify-content: center;
       font-family: 'Raleway', sans-serif;
-      color: #511370;
+      color: $purple;
       font-size: 86px;
       opacity: 0;
       animation-name: fadeInUp;
@@ -26,11 +37,14 @@ body {
       animation-duration: 0.25s;
       animation-fill-mode: both;
       animation-delay: 0.5s;
-      color: #511370;
+      color: $purple;
       font-size: 36px;
       font-family: 'Raleway', sans-serif;
       margin-bottom: 2vh;
       width: 100%;
+      a {
+        color: $link;
+      }
     }
     .links {
       display: flex;
@@ -44,7 +58,7 @@ body {
         animation-duration: 0.5s;
         animation-fill-mode: both;
         animation-delay: 1s;
-        color: #511370;
+        color: $purple;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -54,8 +68,8 @@ body {
         height: 64px;
         border-radius: 20%;
         text-decoration: none;
-        border: 4px solid #511370;
-        box-shadow: 0 0 2px #511370;
+        border: 2px solid $purple;
+        box-shadow: 0 0 2px $purple;
         $n: 10;
         @for $x from 2 through $n {
           &:nth-child(#{$x}) {
@@ -70,16 +84,14 @@ body {
           align-items: center;
           justify-content: center;
         }
+        &:hover {
+          background-color: white;
+          transition-duration: 250ms;
+          box-shadow: 2px 2px 4px $purple;
+        }
       }
     }
   }
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #eaeaea;
-  margin: 0;
 }
 
 @keyframes fadeInUp {
@@ -107,8 +119,6 @@ body {
           margin: 12px;
           width: 64px;
           height: 64px;
-          border: 4px solid #511370;
-          box-shadow: 0 0 2px #511370;
           i {
             width: 48px;
             height: 48px;
@@ -135,8 +145,6 @@ body {
           margin: 12px;
           width: 64px;
           height: 64px;
-          border: 4px solid #511370;
-          box-shadow: 0 0 2px #511370;
           i {
             width: 48px;
             height: 48px;
@@ -164,8 +172,6 @@ body {
           margin: 12px;
           width: 48px;
           height: 48px;
-          border: 4px solid #511370;
-          box-shadow: 0 0 2px #511370;
           i {
             width: 36px;
             height: 36px;
@@ -192,8 +198,6 @@ body {
           margin: 12px;
           width: 97px;
           height: 97px;
-          border: 4px solid #511370;
-          box-shadow: 0 0 2px #511370;
           i {
             width: 64px;
             height: 64px;
