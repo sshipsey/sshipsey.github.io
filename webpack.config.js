@@ -21,11 +21,11 @@ module.exports = {
   },
   output: {
     filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'docs'),
   },
   mode: 'development',
   devServer: {
-    contentBase: path.join(__dirname, 'dist'),
+    contentBase: path.join(__dirname, 'docs'),
     compress: true,
   },
   plugins: [
@@ -33,11 +33,11 @@ module.exports = {
       patterns: [
         {
           from: path.resolve(__dirname, 'src/index.html'),
-          to: path.resolve(__dirname, 'dist/index.html'),
+          to: path.resolve(__dirname, 'docs/index.html'),
         },
         {
           from: path.resolve(__dirname, 'src/img'),
-          to: path.resolve(__dirname, 'dist/img'),
+          to: path.resolve(__dirname, 'docs/img'),
         },
       ],
     }),
