@@ -52,6 +52,61 @@ body {
     ::selection {
       background: $bg;
     }
+    .back-button-container {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 2vh;
+      div {
+        color: $purple;
+        font-family: 'Raleway', sans-serif;
+        background-color: $resume;
+        box-shadow: 4px 4px 0 $purple;
+        border: 1px solid $purple;
+        cursor: pointer;
+        padding: 14px;
+      }
+    }
+    .resume-container {
+      margin: 2vh 0;
+      background-color: $resume;
+      box-shadow: 4px 4px 0 $purple;
+      border: 1px solid $purple;
+      position: relative;
+      padding: 24px;
+      .photo {
+        width: 100%;
+      }
+      .resume-header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2vh;
+        div {
+          font-weight: bold;
+          color: $purple;
+        }
+        a {
+          color: $purple;
+        }
+      }
+      .resume-section {
+        margin-bottom: 2vh;
+        .resume-title {
+          font-weight: bold;
+          color: $purple;
+        }
+        .resume-subtitle {
+          color: $purple;
+          margin-bottom: 1vh;
+        }
+        .resume-desc {
+          color: $link;
+          margin-bottom: 8px;
+        }
+      }
+    }
   }
   .home-page {
     margin-top: auto;
@@ -178,7 +233,8 @@ body {
 
 @media (min-width: 0px) {
   body {
-    .home-page {
+    .home-page,
+    .resume-page {
       width: 240px;
       .name {
         font-size: 36px;
@@ -204,7 +260,8 @@ body {
 
 @media (min-width: 360px) {
   body {
-    .home-page {
+    .home-page,
+    .resume-page {
       width: 350px;
       .name {
         font-size: 42px;
@@ -224,13 +281,22 @@ body {
           }
         }
       }
+      .resume-container {
+        padding: 12px;
+        .resume-section {
+          .resume-desc {
+            font-size: 12px;
+          }
+        }
+      }
     }
   }
 }
 
 @media (min-width: 540px) {
   body {
-    .home-page {
+    .home-page,
+    .resume-page {
       width: 520px;
       .name {
         font-size: 48px;
@@ -239,88 +305,72 @@ body {
         font-size: 24px;
       }
       .links {
-        width: 360px;
+        width: 400px;
         .link {
           margin: 12px;
-          width: 48px;
-          height: 48px;
+          width: 64px;
+          height: 64px;
           i {
-            width: 36px;
-            height: 36px;
-            font-size: 36px;
+            width: 56px;
+            height: 56px;
+            font-size: 56px;
+          }
+        }
+      }
+      .resume-container {
+        .resume-header {
+          div {
+            font-size: 32px;
+          }
+          a {
+            font-size: 20px;
+          }
+        }
+        .resume-section {
+          .resume-title {
+            font-size: 24px;
+          }
+          .resume-subtitle {
+            font-size: 20px;
+          }
+          .resume-desc {
+            font-size: 14px;
           }
         }
       }
     }
   }
 }
+
 @media (min-width: 820px) {
   body {
     .home-page,
     .resume-page {
       width: 820px;
-      display: flex;
-      justify-content: center;
       .name {
         font-size: 86px;
       }
       .desc {
         font-size: 36px;
       }
-      .back-button-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2vh;
-        div {
-          padding: 14px;
-          color: $purple;
-          font-family: 'Raleway', sans-serif;
-          background-color: $resume;
-          box-shadow: 4px 4px 0 $purple;
-          border: 1px solid $purple;
-          cursor: pointer;
-        }
-      }
       .resume-container {
-        margin: 2vh 0;
-        background-color: $resume;
-        padding: 24px;
-        box-shadow: 4px 4px 0 $purple;
-        border: 1px solid $purple;
-        position: relative;
         .resume-header {
-          width: 100%;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin-bottom: 2vh;
           div {
-            font-weight: bold;
             font-size: 48px;
-            color: $purple;
           }
           a {
             font-size: 24px;
-            color: $purple;
           }
         }
         .resume-section {
-          margin-bottom: 2vh;
           .resume-title {
-            font-weight: bold;
             font-size: 30px;
-            color: $purple;
           }
           .resume-subtitle {
             font-size: 24px;
-            color: $purple;
-            margin-bottom: 1vh;
           }
           .resume-desc {
             font-size: 18px;
-            color: $link;
-            margin-bottom: 8px;
           }
         }
       }
