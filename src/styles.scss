@@ -64,7 +64,9 @@ body {
         box-shadow: 4px 4px 0 $purple;
         border: 1px solid $purple;
         cursor: pointer;
-        padding: 14px;
+        font-size: 24px;
+        font-weight: bold;
+        padding: 16px 24px;
       }
     }
     .resume-container {
@@ -311,9 +313,9 @@ body {
           width: 64px;
           height: 64px;
           i {
-            width: 56px;
-            height: 56px;
-            font-size: 56px;
+            width: 48px;
+            height: 48px;
+            font-size: 48px;
           }
         }
       }
