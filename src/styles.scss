@@ -56,7 +56,7 @@ body {
       width: 100%;
       display: flex;
       justify-content: center;
-      margin-bottom: 2vh;
+      margin-bottom: 1vh;
       div {
         color: $purple;
         font-family: 'Raleway', sans-serif;
@@ -64,9 +64,9 @@ body {
         box-shadow: 4px 4px 0 $purple;
         border: 1px solid $purple;
         cursor: pointer;
-        font-size: 2.5rem;
+        font-size: 24px;
         font-weight: bold;
-        padding: 16px 24px;
+        padding: 8px 16px;
       }
     }
     .resume-container {
