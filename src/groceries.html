@@ -1,0 +1,39 @@
+<head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500&display=swap" rel="stylesheet">
+</head>
+<div id="groceries"></div>
+<style>
+  body {
+    background-color: #00133b;
+    padding: 24px 5%;
+  }
+  .title {
+    color: royalblue;
+    font-size: 36px;
+    font-weight: 600;
+    font-family: 'Work Sans', sans-serif;
+  }
+  .item {
+    font-family: 'Work Sans', sans-serif;
+    margin: 36px 0;
+    background-color:royalblue;
+    border-radius: 12px;
+    font-size: 18px;
+    padding: 36px;
+    color:azure;
+  }
+</style>
+<script>
+  window.fetch('https://us-central1-groceries-79ae6.cloudfunctions.net/groceries')
+    .then(function(res) {
+      return res.json();
+    }).then(function(json) {
+      const list = json.reduce((list, grocery) => {
+        list += `<div class="item">${grocery}</div>`;
+        return list;
+      }, '');
+      document.getElementById('groceries').innerHTML = `<div class="title">Groceries</div>${list}`;
+    });
+</script>

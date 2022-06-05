@@ -36,6 +36,10 @@ module.exports = {
           to: path.resolve(__dirname, 'docs/index.html'),
         },
         {
+          from: path.resolve(__dirname, 'src/groceries.html'),
+          to: path.resolve(__dirname, 'docs/groceries.html'),
+        },
+        {
           from: path.resolve(__dirname, 'src/img'),
           to: path.resolve(__dirname, 'docs/img'),
         },
